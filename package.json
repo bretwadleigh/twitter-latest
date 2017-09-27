@@ -1,0 +1,12 @@
+{
+  "name": "twitter-latest",
+  "version": "1.0.0",
+  "description": "Latest Twitter Tweet Service",
+  "main": "index.js",
+  "author": "Bret Wadleigh",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "twit": "^2.2.9"
+  }
+}
