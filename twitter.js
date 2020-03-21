@@ -1,5 +1,4 @@
-//console.log('The twit is alive');
-//var fs = require("fs");
+// written by Bret Wadleigh for https://bretwadleigh.net
 var Twit = require('twit');
 var dotenv = require('dotenv');
 var fs = require('fs');
@@ -25,13 +24,6 @@ function twitData (err, data, response) {
     console.log(data);
     obj.tweets = [];
     for (var i = 0; i < data.length; i++) {
-      /* obj.tweets[i].name = data[i].user.name;
-      obj.tweets[i].screen_name = data[i].user.screen_name;
-      obj.tweets[i].image = data[i].user.profile_image_url;
-      obj.tweets[i].text = data[i].text; */
-
-      //console.log(data[i].id + ' created at ' + data[i].created_at);
-
       obj.tweets[i] = {
         id: data[i].id,
         created_date: data[i].created_at,
@@ -41,10 +33,6 @@ function twitData (err, data, response) {
       };
     }
   }
-
-  //console.log(obj);
-
-//return JSON.stringify(obj);
 
 fs.writeFile('data/data.json',JSON.stringify(obj), function(err){
     if(err) {
@@ -60,5 +48,3 @@ fs.writeFile('data/data.json',JSON.stringify(obj), function(err){
 });
 
 }
-
-//module.exports = twitData;
